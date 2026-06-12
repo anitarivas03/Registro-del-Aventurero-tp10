@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gran Alianza de Aventureros - Registro Épico</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="stylestp10.css">
+</head>
+<body>
+
+<div class="adventure-card" id="appContainer">
+    <h1> REGISTRO DEL AVENTURERO </h1>
+    <div style="text-align: center;">
+        <span class="badge-requisite"> La Gran Alianza te espera </span>
+    </div>
+    
+    <!-- Preguntas dinamicas: 10 preguntas en contenedores individuales -->
+    <div id="questionsWrapper">
+        <!-- Pregunta 1 -->
+        <div id="question1" class="question-container">
+            <label class="form-label"> 1. ¿Cuál es el nombre de tu personaje?</label>
+            <input type="text" id="nombrePersonaje" class="form-control" placeholder="Ej: Eldrin Valiente" autocomplete="off">
+            <div id="errorNombre" class="error-message"></div>
+            <small class="text-muted">Solo letras, acentos, ñ. Mínimo 3 caracteres.</small>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div id="question2" class="question-container hidden-question">
+            <label class="form-label"> 2. ¿Cuál es tu raza?</label>
+            <select id="raza" class="form-select">
+                <option value="">-- Selecciona una raza --</option>
+                <option value="Humano">Humano</option>
+                <option value="Elfo">Elfo</option>
+                <option value="Enano">Enano</option>
+                <option value="Orco">Orco</option>
+            </select>
+            <div id="errorRaza" class="error-message"></div>
+        </div>
+
+        <!-- Pregunta 3-->
+        <div id="question3" class="question-container hidden-question">
+            <label class="form-label"> 3. ¿Cuál es tu clase?</label>
+            <select id="clase" class="form-select">
+                <option value="">-- Selecciona una clase --</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Mago">Mago</option>
+                <option value="Arquero">Arquero</option>
+                <option value="Sanador">Sanador</option>
+            </select>
+            <div id="errorClase" class="error-message"></div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div id="question4" class="question-container hidden-question">
+            <label class="form-label"> 4. ¿Cuál es el nombre de tu reino de origen?</label>
+            <input type="text" id="reinoOrigen" class="form-control" placeholder="Reino legendario">
+            <div id="errorReino" class="error-message"></div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div id="question5" class="question-container hidden-question">
+            <label class="form-label"> 5. ¿Cuál es el nombre de tu arma principal?</label>
+            <input type="text" id="armaPrincipal" class="form-control" placeholder="Espada de Ébano, Arco Lunar...">
+            <div id="errorArma" class="error-message"></div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div id="question6" class="question-container hidden-question">
+            <label class="form-label"> 6. Número de registro de aventurero</label>
+            <input type="text" id="registroNum" class="form-control" placeholder="Ej: 725409" maxlength="6">
+            <div id="errorRegistro" class="error-message"></div>
+            <small>Debe ser exactamente 6 dígitos numéricos.</small>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div id="question7" class="question-container hidden-question">
+            <label class="form-label"> 7. Puntos de vida (HP)</label>
+            <input type="text" id="puntosVida" class="form-control" placeholder="Entre 1 y 999">
+            <div id="errorVida" class="error-message"></div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div id="question8" class="question-container hidden-question">
+            <label class="form-label"> 8. ¿Cuántas batallas ganaste?</label>
+            <input type="text" id="batallasGanadas" class="form-control" placeholder="Número entero >=0">
+            <div id="errorBatallas" class="error-message"></div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div id="question9" class="question-container hidden-question">
+            <label class="form-label">9. ¿Cuándo nació tu personaje?</label>
+            <input type="date" id="fechaNacimiento" class="form-control">
+            <div id="errorFechaNac" class="error-message"></div>
+            <small>Debe ser mayor de 18 años (exacto con día actual).</small>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div id="question10" class="question-container hidden-question">
+            <label class="form-label"> 10. ¿Cuándo comenzaste tu aventura?</label>
+            <input type="date" id="fechaAventura" class="form-control">
+            <div id="errorFechaAvent" class="error-message"></div>
+            <small>No puede ser una fecha futura.</small>
+        </div>
+    </div>
+
+    <!-- Botones siempre visibles hasta completar -->
+    <div class="button-bar" id="buttonsPanel">
+        <button id="btnBack" class="btn-adventure" disabled>◀ RETROCEDER</button>
+        <button id="btnNext" class="btn-adventure btn-success-custom">SIGUIENTE ▶</button>
+        <button id="btnReset" class="btn-adventure btn-reset"> REINICIAR</button>
+    </div>
+
+    <!-- contenedor para cartel de éxito -->
+    <div id="successMessageContainer"></div>
+    <footer> La Gran Alianza de Aventureros — que tus hazañas queden escritas</footer>
+</div>
+
+<script src="tp10script.js"></script>
+</body>
+</html>
